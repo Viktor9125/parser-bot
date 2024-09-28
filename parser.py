@@ -1,7 +1,7 @@
 import telebot
 import parser_functions as ps
 
-TOKEN = '7895950057:AAH_U_S253n8ZCqxQwWhq4kQodC-CcdHtNM'
+TOKEN = 'Токен'
 bot = telebot.TeleBot(TOKEN)
 
 
