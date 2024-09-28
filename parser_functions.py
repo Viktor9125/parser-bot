@@ -6,7 +6,7 @@ import json
 def articles():
     url = 'https://habr.com/ru/feed/'
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+        'User-Agent': 'user_agent'
     }
     response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -30,7 +30,7 @@ def articles():
 def articles_by_flows(flow):
     url = f'https://habr.com/ru/flows/{str(flow)}/articles/'
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+        'User-Agent': 'user_agent'
     }
     response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -64,6 +64,3 @@ def complaint(client, text):
     with open('complaints.json', 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
 
-
-if __name__ == '__main__':
-    articles_by_flows('admin')
